@@ -9,11 +9,20 @@
 - explore: fa_campaign_response_summary_denorm
   label: 'Marketing Campaign Response'
   
-- explore: fa_display_ad_click_daily
-  label: 'Ad Campaign Response'
 
 - explore: fa_display_ad_impression_daily
   label: 'Ad Campaign Execution'
+
+- explore: fa_display_ad_click_daily
+  label: 'Ad Campaign Response'
+  joins:
+    - join: d_order
+      type: left_outer 
+      relationship: many_to_one
+      sql_on: ${fa_display_ad_click_daily.order_id}=${d_order.order_id}
+      view_label: 'Order Lookup'
+      fields: [name]
+
 
 # 
 # - explore: d_advertiser_campaign_line_item
