@@ -20,7 +20,7 @@
       type: left_outer 
       relationship: many_to_one
       sql_on: ${fa_display_ad_click_daily.order_id}=${d_order.order_id}
-      view_label: 'Order Lookup'
+      view_label: 'Order'
       fields: [name]
 
 
