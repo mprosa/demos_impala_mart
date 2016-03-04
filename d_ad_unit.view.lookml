@@ -74,6 +74,7 @@
     sql: ${TABLE}.mobile_platform
 
   - dimension: name
+    label: "Ad Unit Name"
     type: string
     sql: ${TABLE}.name
 

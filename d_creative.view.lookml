@@ -34,6 +34,7 @@
     sql: ${TABLE}.last_modified_date_time
 
   - dimension: name
+    label: "Creative Name"
     type: string
     sql: ${TABLE}.name
 

@@ -22,6 +22,30 @@
       sql_on: ${fa_display_ad_click_daily.order_id}=${d_order.order_id}
       view_label: 'Order'
       fields: [name]
+    - join: d_creative
+      type: left_outer 
+      relationship: many_to_one
+      sql_on: ${fa_display_ad_click_daily.creative_id}=${d_creative.creative_id}
+      view_label: 'Creative'
+      fields: [name]
+    - join: d_ad_unit
+      type: left_outer 
+      relationship: many_to_one
+      sql_on: ${fa_display_ad_click_daily.ad_unit_id}=${d_ad_unit.ad_unit_id}
+      view_label: 'Ad Unit'
+      fields: [name]
+    - join: d_company
+      type: left_outer 
+      relationship: many_to_one
+      sql_on: ${fa_display_ad_click_daily.company_id}=${d_company.company_id}
+      view_label: 'Company Name'
+      fields: [name]
+#     - join: d_order_line_item
+#       type: left_outer 
+#       relationship: many_to_one
+#       sql_on: ${fa_display_ad_click_daily.order_line_item_id}=${d_order_line_item.order_line_item_id}
+#       view_label: 'Order Line Item'
+ #      fields: [name, cost_per_unit_amount, units_bought, cost_per_unit_currency_code]
 
 
 # 
