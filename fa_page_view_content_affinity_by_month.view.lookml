@@ -14,8 +14,10 @@
     sql: ${TABLE}.dataset_instance_id
 
   - dimension: date_yyyymm
-    type: number
+    type: string
     sql: ${TABLE}.date_yyyymm
+
+
 
   - dimension: device_group
     type: string
