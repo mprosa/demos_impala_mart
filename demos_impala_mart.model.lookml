@@ -3,8 +3,25 @@
 - include: "*.view.lookml"       # include all the views
 - include: "*.dashboard.lookml"  # include all the dashboards
 
+
+
+- explore: db_individual_audience_segment
+  label: 'Segment Profiling'
+  joins:
+    - join: d_audience_segment
+      type: left_outer 
+      relationship: many_to_one
+      sql_on: ${db_individual_audience_segment.audience_segment_id}=${d_audience_segment.audience_segment_id}
+      view_label: 'Segment Profiling'
+    - join: d_digital_profile_demographic
+      type: left_outer 
+      relationship: many_to_one
+      sql_on: ${db_individual_audience_segment.master_digital_profile_id}=${d_digital_profile_demographic.master_digital_profile_id}
+      view_label: 'Segment Profiling'
+
 - explore: fa_campaign_summary_denorm
   label: 'Marketing Campaign Execution'
+  
   
 - explore: fa_campaign_response_summary_denorm
   label: 'Marketing Campaign Response'
