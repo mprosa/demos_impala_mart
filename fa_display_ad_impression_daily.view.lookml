@@ -21,24 +21,33 @@
        sql: ${TABLE}.dataset_instance_id
 
      - dimension: company_id
+       hidden: true     
        type: string
        sql: ${TABLE}.company_id
 
      - dimension: order_id
+       hidden: true 
        type: string
        sql: ${TABLE}.order_id
  
      - dimension: order_line_item_id
+       hidden: true      
        type: number
        sql: ${TABLE}.order_line_item_id
 
      - dimension: creative_id
+       hidden: true      
        type: number
        sql: ${TABLE}.creative_id
 
      - dimension: ad_unit_id
+       hidden: true      
        type: string
        sql: ${TABLE}.ad_unit_id
+       
+     - dimension: device_category
+       type: string
+       sql: ${TABLE}.device_category       
 #
      - measure: total_impressions
        type: sum

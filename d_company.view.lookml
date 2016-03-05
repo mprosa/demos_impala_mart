@@ -46,6 +46,7 @@
     sql: ${TABLE}.last_modified_datetime
 
   - dimension: name
+    label: "Company Name"
     type: string
     sql: ${TABLE}.name
 

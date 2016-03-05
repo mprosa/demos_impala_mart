@@ -46,6 +46,10 @@
        type: string
        sql: ${TABLE}.ad_unit_id
 
+     - dimension: device_category
+       type: string
+       sql: ${TABLE}.device_category    
+
      - measure: total_clicks
        type: sum
        sql: ${TABLE}.num_clicks
