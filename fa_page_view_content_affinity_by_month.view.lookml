@@ -33,7 +33,11 @@
     type: number
     sql: ${TABLE}.registered_flg
 
-  - measure: count
-    type: count
+  - measure: audience_count
+    type: count_distinct
+    sql: ${master_digital_profile_id}
     drill_fields: []
-
+  
+  
+  
+  
