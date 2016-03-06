@@ -55,7 +55,7 @@
 
   - dimension: high_washing_machine_affinity_flg
     type: yesno
-    sql: COALESCE(${TABLE}.high_washing_machine_affinity_flg,1)=1
+    sql: COALESCE(${TABLE}.high_washing_machine_affinity_flg,0)=1
 
   - dimension: home_flg
     type: yesno
@@ -75,7 +75,7 @@
 
   - dimension: master_digital_profile_id
     type: yesno
-    sql: ${TABLE}.master_digital_profile_id=1
+    sql: ${TABLE}.master_digital_profile_id
 
   - dimension: mobile_app_super_users_flg
     type: yesno
