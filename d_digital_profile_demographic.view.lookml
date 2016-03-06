@@ -114,8 +114,8 @@
     sql: ${TABLE}.emails_sent_ltd
 
   - dimension: employee_flg
-    type: string
-    sql: ${TABLE}.employee_flg
+    type: yesno
+    sql: ${TABLE}.employee_flg='Y'
 
   - dimension: ethnicity
     type: string
@@ -130,8 +130,8 @@
     sql: ${TABLE}.gender
 
   - dimension: home_office_flg
-    type: string
-    sql: ${TABLE}.home_office_flg
+    type: yesno
+    sql: ${TABLE}.home_office_flg='Y'
 
   - dimension: household_income
     type: string
@@ -174,8 +174,8 @@
     sql: ${TABLE}.net_sales_ltd
 
   - dimension: new_mover_flg
-    type: string
-    sql: ${TABLE}.new_mover_flg
+    type: yesno
+    sql: ${TABLE}.new_mover_flg='Y'
 
   - dimension: number_of_adults
     type: number

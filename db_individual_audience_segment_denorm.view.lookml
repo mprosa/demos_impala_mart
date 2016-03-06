@@ -55,7 +55,7 @@
 
   - dimension: high_washing_machine_affinity_flg
     type: yesno
-    sql: ${TABLE}.high_washing_machine_affinity_flg=1
+    sql: COALESCE(${TABLE}.high_washing_machine_affinity_flg,1)=1
 
   - dimension: home_flg
     type: yesno
