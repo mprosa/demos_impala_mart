@@ -3,10 +3,11 @@
 - include: "*.view.lookml"       # include all the views
 - include: "*.dashboard.lookml"  # include all the dashboards
 
-
+######################################################################
 
 - explore: db_individual_audience_segment
-  label: 'Segment Profiling'
+  label: "Segment Profiling"
+  view_label: 'Segment Profiling'  
   joins:
     - join: d_audience_segment
       type: left_outer 
@@ -19,13 +20,35 @@
       sql_on: ${db_individual_audience_segment.master_digital_profile_id}=${d_digital_profile_demographic.master_digital_profile_id}
       view_label: 'Segment Profiling'
 
+######################################################################
+
+- explore: db_individual_audience_segment_denorm
+  label: "Segment Building"
+  view_label: 'Segment Building'  
+  joins:
+    - join: d_digital_profile_demographic
+      type: left_outer 
+      relationship: many_to_one
+      sql_on: ${db_individual_audience_segment_denorm.master_digital_profile_id}=${d_digital_profile_demographic.master_digital_profile_id}
+      view_label: 'Segment Building'
+
+######################################################################
+
+- explore: fa_comment
+  label: 'User Generated Content (UGC)'
+  view_label: "Comments"
+
+######################################################################
+
 - explore: fa_campaign_summary_denorm
   label: 'Marketing Campaign Execution'
-  
+
+######################################################################  
   
 - explore: fa_campaign_response_summary_denorm
   label: 'Marketing Campaign Response'
   
+######################################################################
 
 - explore: fa_display_ad_impression_daily
   label: 'Ad Campaign Execution'
@@ -62,6 +85,7 @@
 #      view_label: 'Order Line Item'
 #      fields: [name, cost_per_unit_amount, units_bought, cost_per_unit_currency_code]
 
+######################################################################
 
 - explore: fa_display_ad_click_daily
   label: 'Ad Campaign Response'
@@ -98,14 +122,13 @@
 #      view_label: 'Order Line Item'
 #      fields: [name, cost_per_unit_amount, units_bought, cost_per_unit_currency_code]
 
-
-
+######################################################################
 
 - explore: fa_page_view_content_affinity_by_month
   label: 'Content Affinity'
 
 
-
+######################################################################
 
 
 
