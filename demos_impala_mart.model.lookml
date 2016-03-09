@@ -41,41 +41,41 @@
 ######################################################################
 
 - explore: fa_campaign_summary_denorm
-  label: 'Marketing Campaign Execution'
+  label: 'Campaign - Marketing Execution'
 
 ######################################################################  
   
 - explore: fa_campaign_response_summary_denorm
-  label: 'Marketing Campaign Response'
+  label: 'Campaign - Marketing Response'
   
 ######################################################################
 
 - explore: fa_display_ad_impression_daily
-  label: 'Ad Campaign Execution'
+  label: 'Campaign - Ad Execution'
   joins:
     - join: d_order
       type: left_outer 
       relationship: many_to_one
       sql_on: ${fa_display_ad_impression_daily.order_id}=${d_order.order_id}
-      view_label: 'Ad Campaign Execution'
+      view_label: 'Campaign - Ad Execution'
       fields: [name]
     - join: d_creative
       type: left_outer 
       relationship: many_to_one
       sql_on: ${fa_display_ad_impression_daily.creative_id}=${d_creative.creative_id}
-      view_label: 'Ad Campaign Execution'
+      view_label: 'Campaign - Ad Execution'
       fields: [name]
     - join: d_ad_unit
       type: left_outer 
       relationship: many_to_one
       sql_on: ${fa_display_ad_impression_daily.ad_unit_id}=${d_ad_unit.ad_unit_id}
-      view_label: 'Ad Campaign Execution'
+      view_label: 'Campaign - Ad Execution'
       fields: [name]
     - join: d_company
       type: left_outer 
       relationship: many_to_one
       sql_on: ${fa_display_ad_impression_daily.company_id}=${d_company.company_id}
-      view_label: 'Ad Campaign Execution'
+      view_label: 'Campaign - Ad Execution'
       fields: [name]
 #     unable to add the following as a view, i think because it has array fields
 #    - join: d_order_line_item
@@ -88,31 +88,31 @@
 ######################################################################
 
 - explore: fa_display_ad_click_daily
-  label: 'Ad Campaign Response'
+  label: 'Campaign - Ad Response'
   joins:
     - join: d_order
       type: left_outer 
       relationship: many_to_one
       sql_on: ${fa_display_ad_click_daily.order_id}=${d_order.order_id}
-      view_label: 'Ad Campaign Response'
+      view_label: 'Campaign - Ad Response'
       fields: [name]
     - join: d_creative
       type: left_outer 
       relationship: many_to_one
       sql_on: ${fa_display_ad_click_daily.creative_id}=${d_creative.creative_id}
-      view_label: 'Ad Campaign Response'
+      view_label: 'Campaign - Ad Response'
       fields: [name]
     - join: d_ad_unit
       type: left_outer 
       relationship: many_to_one
       sql_on: ${fa_display_ad_click_daily.ad_unit_id}=${d_ad_unit.ad_unit_id}
-      view_label: 'Ad Campaign Response'
+      view_label: 'Campaign - Ad Response'
       fields: [name]
     - join: d_company
       type: left_outer 
       relationship: many_to_one
       sql_on: ${fa_display_ad_click_daily.company_id}=${d_company.company_id}
-      view_label: 'Ad Campaign Response'
+      view_label: 'Campaign - Ad Response'
       fields: [name]
 #     unable to add the following as a view, i think because it has array fields
 #    - join: d_order_line_item

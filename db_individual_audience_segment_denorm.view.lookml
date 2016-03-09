@@ -74,7 +74,8 @@
     sql: ${TABLE}.local_politics_flg=1
 
   - dimension: master_digital_profile_id
-    type: yesno
+    hidden: true
+    type: number
     sql: ${TABLE}.master_digital_profile_id
 
   - dimension: mobile_app_super_users_flg
