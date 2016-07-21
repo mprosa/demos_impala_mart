@@ -38,7 +38,7 @@
   - measure: audience_count
     type: count_distinct
     sql: ${TABLE}.master_digital_profile_id
-    drill_fields: []
+    drill_fields: [master_digital_profile_id]
   
   
   
